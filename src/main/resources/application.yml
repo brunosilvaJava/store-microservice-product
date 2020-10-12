@@ -3,7 +3,7 @@ spring:
     name: product-service
   data:
     mongodb:
-      host: localhost
+      host: mongo
       port: 27017
       database: productDb
       repositories:
@@ -17,7 +17,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
-      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+      default-zone: ${EUREKA_URI:http://eureka:8761/eureka}
   instance:
     prefer-ip-address: true
 
@@ -28,4 +28,4 @@ error:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8088/user
+      user-info-uri: http://auth:8088/user
